@@ -67,8 +67,8 @@ def download_from_drive_gdown(file_id, output_path, retry_count=0):
         # gdown automatically handles virus scan warning
         url = f"https://drive.google.com/uc?id={file_id}"
         
-        # Download with progress bar
-        gdown.download(url, output_path, quiet=False, fuzzy=True)
+        # Download with progress bar (removed fuzzy parameter for compatibility)
+        gdown.download(url, output_path, quiet=False)
         
         # Verify file exists and has content
         if not os.path.exists(output_path):
